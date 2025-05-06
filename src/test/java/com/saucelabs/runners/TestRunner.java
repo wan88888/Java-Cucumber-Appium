@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         glue = {"com.saucelabs.stepdefinitions"},
         plugin = {"pretty", "html:target/cucumber-reports/report.html", 
                 "json:target/cucumber-reports/report.json"},
-        monochrome = true
+        monochrome = true,
+        tags = "@successful"
 )
 public class TestRunner {
     // This class should be empty

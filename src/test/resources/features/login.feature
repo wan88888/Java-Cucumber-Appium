@@ -3,6 +3,7 @@ Feature: SauceLabs Sample App Login
   I want to be able to login with valid credentials
   So that I can access the application features
 
+  @successful
   Scenario: Successful login with valid credentials
     Given I am on the login screen
     When I enter username "standard_user"

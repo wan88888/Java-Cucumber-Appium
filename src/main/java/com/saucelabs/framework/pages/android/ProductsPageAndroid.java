@@ -5,10 +5,6 @@ import org.openqa.selenium.WebElement;
 
 public class ProductsPageAndroid extends BasePage {
 
-    private WebElement getCartBadge() {
-        return findElementByXPath("//android.view.ViewGroup[@content-desc='test-Cart']/android.view.ViewGroup/android.widget.TextView");
-    }
-
     private WebElement getProductTitle() {
         return findElementByAccessibilityId("test-PRODUCTS");
     }

@@ -22,7 +22,7 @@ public class WaitUtils {
      * @param timeoutInSeconds Timeout in seconds
      */
     public static void waitForVisibility(WebElement element, long timeoutInSeconds) {
-        AppiumDriver driver = DriverManager.getDriver();
+        AppiumDriver<WebElement> driver = DriverManager.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
@@ -33,7 +33,7 @@ public class WaitUtils {
      * @param timeoutInSeconds Timeout in seconds
      */
     public static void waitForClickability(WebElement element, long timeoutInSeconds) {
-        AppiumDriver driver = DriverManager.getDriver();
+        AppiumDriver<WebElement> driver = DriverManager.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
@@ -44,7 +44,7 @@ public class WaitUtils {
      * @param timeoutInSeconds Timeout in seconds
      */
     public static void waitForPresence(By locator, long timeoutInSeconds) {
-        AppiumDriver driver = DriverManager.getDriver();
+        AppiumDriver<WebElement> driver = DriverManager.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
@@ -55,7 +55,7 @@ public class WaitUtils {
      * @param timeoutInSeconds Timeout in seconds
      */
     public static void waitForInvisibility(WebElement element, long timeoutInSeconds) {
-        AppiumDriver driver = DriverManager.getDriver();
+        AppiumDriver<WebElement> driver = DriverManager.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.until(ExpectedConditions.invisibilityOf(element));
     }

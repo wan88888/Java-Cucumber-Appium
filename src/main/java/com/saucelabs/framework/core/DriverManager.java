@@ -3,6 +3,7 @@ package com.saucelabs.framework.core;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -10,13 +11,13 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
-    private static final ThreadLocal<AppiumDriver> driver = new ThreadLocal<>();
+    private static final ThreadLocal<AppiumDriver<WebElement>> driver = new ThreadLocal<>();
 
     private DriverManager() {
         // Private constructor to prevent instantiation
     }
 
-    public static AppiumDriver getDriver() {
+    public static AppiumDriver<WebElement> getDriver() {
         if (driver.get() == null) {
             initializeDriver();
         }
@@ -43,9 +44,9 @@ public class DriverManager {
         while (retryCount < maxRetries) {
             try {
                 if (Configuration.isAndroid()) {
-                    driver.set(new AndroidDriver(serverUrl, capabilities));
+                    driver.set(new AndroidDriver<WebElement>(serverUrl, capabilities));
                 } else if (Configuration.isIOS()) {
-                    driver.set(new IOSDriver(serverUrl, capabilities));
+                    driver.set(new IOSDriver<WebElement>(serverUrl, capabilities));
                 } else {
                     throw new RuntimeException("Unsupported platform: " + Configuration.getPlatform());
                 }

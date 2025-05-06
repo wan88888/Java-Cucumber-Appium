@@ -5,10 +5,6 @@ import org.openqa.selenium.WebElement;
 
 public class ProductsPageIOS extends BasePage {
 
-    private WebElement getCartBadge() {
-        return findElementByXPath("//XCUIElementTypeOther[@name='test-Cart']/XCUIElementTypeOther");
-    }
-
     private WebElement getProductTitle() {
         return findElementByAccessibilityId("test-PRODUCTS");
     }
